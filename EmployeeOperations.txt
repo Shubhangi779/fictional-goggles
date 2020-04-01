@@ -1,0 +1,34 @@
+package com.infy.model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.infy.dao.DatabaseConnectivity;
+
+public class EmployeeOperations implements IEmployeeOperations{
+	static Connection connection=DatabaseConnectivity.getConnetions();
+	PreparedStatement preparedStatement=null;
+	ResultSet resultSet=null;
+	@Override
+	public boolean addEmployee(Employee employee) {
+		String query="insert into Employee(EmployeeName,Email,Designation,PhoneNo,Salary) values(?,?,?,?,?);";
+		try {
+			preparedStatement=connection.prepareStatement(query);
+			preparedStatement.setString(1, employee.getName());
+			preparedStatement.setString(2, employee.getEmail());
+			preparedStatement.setString(3, employee.getDesination());
+			preparedStatement.setString(4, employee.getPnoneNo());
+			preparedStatement.setDouble(5, employee.getSalary());
+			return preparedStatement.execute();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+		
+	}
+	
+}

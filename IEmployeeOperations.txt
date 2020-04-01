@@ -1,0 +1,5 @@
+package com.infy.model;
+
+public interface IEmployeeOperations {
+	public boolean addEmployee(Employee employee);
+}

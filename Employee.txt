@@ -1,0 +1,48 @@
+package com.infy.model;
+
+public class Employee {
+
+	private String name;
+	private String email;
+	private String Desination;
+	private String pnoneNo;
+	private double salary;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getDesination() {
+		return Desination;
+	}
+	public void setDesination(String desination) {
+		Desination = desination;
+	}
+	public String getPnoneNo() {
+		return pnoneNo;
+	}
+	public void setPnoneNo(String pnoneNo) {
+		this.pnoneNo = pnoneNo;
+	}
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + ", email=" + email + ", Desination=" + Desination + ", pnoneNo=" + pnoneNo
+				+ ", salary=" + salary + "]";
+	}
+	
+}
+
+ 
