@@ -1,0 +1,36 @@
+package com.infy.assignment;
+
+import java.io.File;
+
+import com.mongodb.DB;
+import com.mongodb.MongoClient; 
+import com.mongodb.MongoCredential;
+import com.mongodb.gridfs.GridFS;
+import com.mongodb.gridfs.GridFSDBFile;
+import com.mongodb.gridfs.GridFSInputFile; 
+
+public class ConnectToDB { 
+   
+   public static void main( String args[] ) throws IOException {  
+       
+	  //Creating mongo client
+		
+		 MongoClient mongo = new MongoClient("localhost" , 27017 );
+		 DB database =mongo.getDB("localDb"); 
+		 System.out.println("LocalDatabase : "+database);
+
+		 // To insert a file into mongo db using grid fs 
+		 String newFileName ="ResumeFile";
+		 File newfile = new File("E://Shubhu/Shubhangi_Resume.pdf");
+		 GridFS gfs = new GridFS(database, "Test"); 
+		 GridFSInputFile gfsFile=gfs.createFile(newfile); 
+		 gfsFile.setFilename(newFileName); 
+		 gfsFile.save();
+	
+		 String getFileName = "ResumeFile"; 
+		 GridFS gfs1 = new GridFS(database,"Test"); 
+		 GridFSDBFile file = gfs1.findOne(getFileName);
+		 System.out.println(file);
+		 
+   } 
+}
