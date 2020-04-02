@@ -1,3 +1,28 @@
+ProblemStatement
+----------------------
+INPUT:You should give 3 inputs in single line separated by space, C N Q,where C is
+the choice your friend makes whether to start with all heads up or tail. So it will
+have two values either 1 or 2. 1 means all head up and 2 means all tail up. N is the
+number of coin and Q means what you need to count after N round of game. So Q
+will also have two values either 1 or 2 where 1 means you need to count how
+many coins are with head up and 2 means how many coins are with tail up.
+
+EXAMPLE: 1 5 2
+Means initially all coins are head up, there are 5 coins so game will be of 5 round
+and you need to calculate number of tails up at the end of 5 rounds
+In the game in Example: C=1, so initial arrangement of coins are H HHHH, and
+now your friend will play 5 rounds and coin faces will be changed as follows
+After the 1st Round: T H HHH
+After the 2nd Round: H T H HH
+After the 3rd Round: T H T H H
+After the 4th Round: H T H T H
+After the 5th Round: T H T H T
+Now the value of Q is 2 so we need to count the number of coins with tail facing
+up. So the output comes out to 3
+OUTPUT: 3(For the above input)
+
+----------------------------------------
+
 package com.assignment.coinToss;
 
 import java.util.ArrayList;
