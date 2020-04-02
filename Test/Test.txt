@@ -1,5 +1,5 @@
 ProblemStatement
-----------------------
+---------------------------
 INPUT:You should give 3 inputs in single line separated by space, C N Q,where C is
 the choice your friend makes whether to start with all heads up or tail. So it will
 have two values either 1 or 2. 1 means all head up and 2 means all tail up. N is the
@@ -7,7 +7,7 @@ number of coin and Q means what you need to count after N round of game. So Q
 will also have two values either 1 or 2 where 1 means you need to count how
 many coins are with head up and 2 means how many coins are with tail up.
 
-EXAMPLE: 1 5 2
+EXAMPLE : 1 5 2
 Means initially all coins are head up, there are 5 coins so game will be of 5 round
 and you need to calculate number of tails up at the end of 5 rounds
 In the game in Example: C=1, so initial arrangement of coins are H HHHH, and
